@@ -91,6 +91,10 @@ class ThoughtStep:
 
 
 class Approach(ABC):
+    """
+    Base class for implementing different query handling approaches.
+    Each approach should inherit from this class and implement the `run` method.
+    """
 
     # Allows usage of non-GPT model even if no tokenizer is available for accurate token counting
     # Useful for using local small language models, for example
@@ -300,3 +304,23 @@ class Approach(ABC):
         context: dict[str, Any] = {},
     ) -> AsyncGenerator[dict[str, Any], None]:
         raise NotImplementedError
+
+
+class SpecificApproach(Approach):
+    """
+    A specific implementation of the Approach class.
+    This approach demonstrates how to process queries using a predefined method.
+    """
+    def run(self, query: str) -> dict:
+        """
+        Processes the query and returns the result.
+
+        Args:
+            query (str): The input query string.
+
+        Returns:
+            dict: The processed result.
+        """
+        # Example implementation
+        result = {"query": query, "response": "This is a sample response."}
+        return result

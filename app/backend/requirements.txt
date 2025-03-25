@@ -465,3 +465,9 @@ zipp==3.21.0
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
+
+flask
+azure-ai-openai
+azure-search-documents
+python-dotenv
+requests
